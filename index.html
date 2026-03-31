@@ -1,33 +1,81 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>Учебный фишинг | Кибербезопасность</title>
-	<style type="text/css">* {
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎓 Учебный фишинг | Будьте бдительны!</title>
+    <style>
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', 'Poppins', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow-x: hidden;
             padding: 20px;
         }
-        
-        .container {
-            max-width: 600px;
-            width: 100%;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-            animation: slideIn 0.5s ease-out;
+
+        /* Фоновые элементы: котики и бантики */
+        .bg-cat {
+            position: fixed;
+            font-size: 60px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+            animation: float 20s infinite ease-in-out;
         }
-        
+
+        .bg-bow {
+            position: fixed;
+            font-size: 40px;
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 0;
+            animation: float 15s infinite ease-in-out reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(5deg);
+            }
+        }
+
+        /* Плавающие сердечки */
+        .heart {
+            position: fixed;
+            font-size: 20px;
+            pointer-events: none;
+            animation: floatHeart 8s ease-in-out forwards;
+            z-index: 1;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+            animation: slideIn 0.6s ease-out;
+        }
+
         @keyframes slideIn {
             from {
                 opacity: 0;
@@ -38,228 +86,433 @@
                 transform: translateY(0);
             }
         }
-        
+
+        .card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 48px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(2px);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.01);
+        }
+
         .header {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            padding: 40px 30px;
+            padding: 50px 30px 40px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .header::before {
+            content: '🐱 🎀 🐱 🎀 🐱';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            font-size: 70px;
+            opacity: 0.2;
+            white-space: nowrap;
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(-20%);
+            }
+            to {
+                transform: translateX(0%);
+            }
+        }
+
         .warning-icon {
-            font-size: 80px;
-            margin-bottom: 15px;
+            font-size: 90px;
             display: inline-block;
-            animation: shake 0.5s ease-in-out;
+            animation: bounce 1s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
         }
-        
-        @keyframes shake {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-15deg); }
-            75% { transform: rotate(15deg); }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(10deg);
+            }
         }
-        
+
         h1 {
             color: white;
-            font-size: 28px;
-            margin-bottom: 10px;
+            font-size: 38px;
+            margin: 20px 0 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
-        
+
         .badge {
             display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 5px 15px;
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(5px);
+            padding: 8px 20px;
             border-radius: 50px;
             color: white;
             font-size: 14px;
             font-weight: bold;
             margin-top: 10px;
         }
-        
+
         .content {
-            padding: 40px 35px;
+            padding: 40px 45px;
         }
-        
+
         .alert-box {
-            background: #fff3e0;
-            border-left: 4px solid #ff9800;
-            padding: 20px;
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe8d9 100%);
+            border-left: 5px solid #ff9800;
+            padding: 20px 25px;
             margin-bottom: 30px;
-            border-radius: 8px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
-        
+
+        .alert-emoji {
+            font-size: 40px;
+        }
+
         .alert-box p {
             color: #e65100;
-            font-weight: 500;
+            font-weight: 600;
             margin: 0;
+            font-size: 16px;
+            flex: 1;
         }
-        
+
         .message {
-            color: #333;
-            line-height: 1.6;
-            margin-bottom: 25px;
+            color: #2c3e50;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-size: 16px;
         }
-        
+
         .message p {
             margin-bottom: 15px;
         }
-        
-        .tips {
-            background: #f8f9fa;
+
+        .highlight {
+            background: #fff3cd;
+            padding: 3px 8px;
             border-radius: 12px;
-            padding: 25px;
-            margin: 25px 0;
+            font-weight: bold;
+            color: #856404;
         }
-        
+
+        .tips {
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+            border-radius: 28px;
+            padding: 30px;
+            margin: 25px 0;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
         .tips h3 {
-            color: #2c3e50;
-            font-size: 18px;
-            margin-bottom: 15px;
+            color: #5a67d8;
+            font-size: 24px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
         }
-        
+
         .tips ul {
             list-style: none;
             padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
         }
-        
+
         .tips li {
-            padding: 8px 0 8px 28px;
+            padding: 12px 12px 12px 40px;
             position: relative;
-            color: #555;
+            color: #2d3748;
+            background: white;
+            border-radius: 16px;
+            transition: all 0.2s;
+            font-size: 14px;
         }
-        
+
+        .tips li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
         .tips li:before {
-            content: "✓";
-            color: #27ae60;
-            font-weight: bold;
+            content: "🐱";
             position: absolute;
-            left: 0;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
         }
-        
+
         .warning-box {
-            background: #fee;
-            border-radius: 12px;
-            padding: 20px;
+            background: linear-gradient(135deg, #ffe6e6 0%, #ffd9d9 100%);
+            border-radius: 24px;
+            padding: 25px;
             margin: 25px 0;
-            border: 1px solid #fcc;
+            border: 1px solid #ffb3b3;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            flex-wrap: wrap;
         }
-        
+
+        .warning-emoji {
+            font-size: 48px;
+        }
+
         .warning-box p {
             color: #c0392b;
             margin: 0;
             font-weight: 500;
+            line-height: 1.5;
+            flex: 1;
         }
-        
-        .button {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 10px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+
+        .fun-fact {
+            background: #ecfdf5;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid #a7f3d0;
+        }
+
+        .fun-fact p {
+            color: #065f46;
+            margin: 0;
             font-size: 14px;
         }
-        
-        .button:hover {
-            background: #5a67d8;
+
+        .fun-fact span {
+            font-size: 24px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #4b5563;
+        }
+
+        .btn-secondary:hover {
+            background: #e5e7eb;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102,126,234,0.3);
         }
-        
+
         .footer {
-            background: #f8f9fa;
-            padding: 20px 35px;
+            background: #f9fafb;
+            padding: 25px 35px;
             text-align: center;
-            border-top: 1px solid #e9ecef;
-            font-size: 12px;
-            color: #6c757d;
+            border-top: 1px solid #e5e7eb;
+            font-size: 13px;
+            color: #6b7280;
         }
-        
+
         .footer a {
             color: #667eea;
             text-decoration: none;
         }
-        
+
         .footer a:hover {
             text-decoration: underline;
         }
-        
-        hr {
-            margin: 20px 0;
-            border: none;
-            height: 1px;
-            background: #e9ecef;
+
+        .cat-icon {
+            display: inline-block;
+            animation: wave 1s ease-in-out infinite;
+            transform-origin: 70% 70%;
         }
-        
-        @media (max-width: 480px) {
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            75% { transform: rotate(-10deg); }
+        }
+
+        @media (max-width: 640px) {
             .content {
-                padding: 25px 20px;
+                padding: 25px;
             }
             h1 {
-                font-size: 22px;
+                font-size: 28px;
             }
             .warning-icon {
                 font-size: 60px;
             }
+            .tips ul {
+                grid-template-columns: 1fr;
+            }
+            .header {
+                padding: 35px 20px;
+            }
         }
-	</style>
+    </style>
 </head>
 <body>
+
+<!-- Фоновые котики и бантики -->
+<div class="bg-cat" style="top: 10%; left: 5%;">🐱</div>
+<div class="bg-cat" style="bottom: 15%; right: 3%;">😺</div>
+<div class="bg-cat" style="top: 50%; right: 8%;">🐈</div>
+<div class="bg-cat" style="bottom: 30%; left: 2%;">🐱‍👤</div>
+<div class="bg-bow" style="top: 20%; right: 12%;">🎀</div>
+<div class="bg-bow" style="bottom: 40%; left: 8%;">🎀</div>
+<div class="bg-bow" style="top: 70%; right: 20%;">🎀</div>
+<div class="bg-cat" style="top: 85%; left: 15%;">🐱‍💻</div>
+<div class="bg-cat" style="top: 5%; right: 18%;">🐈‍⬛</div>
+<div class="bg-bow" style="bottom: 10%; right: 25%;">🎀✨</div>
+
 <div class="container">
-<div class="header">
-<div class="warning-icon">⚠️</div>
-
-<h1>Это был учебный фишинг</h1>
-
-<div class="badge">Тренинг по кибербезопасности</div>
+    <div class="card">
+        <div class="header">
+            <div class="warning-icon">⚠️🐱</div>
+            <h1>Это был учебный фишинг! 🎀</h1>
+            <div class="badge">
+                🐱 Тренинг по кибербезопасности от команды ИБ 🎀
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="alert-box">
+                <div class="alert-emoji">🔐😺</div>
+                <p>Вы не прошли проверку, но это <strong>абсолютно нормально</strong> — именно для этого мы проводим обучение! Каждый из нас учится на своих ошибках 💪</p>
+            </div>
+            
+            <div class="message">
+                <p>📧 Данное письмо было отправлено в рамках <strong>учебной тренировки по информационной безопасности</strong>, проводимой службой ИБ нашей компании.</p>
+                <p>🔗 <span class="highlight">Вы перешли по ссылке из фишингового письма</span>. Если бы это была реальная атака, ваши данные могли бы оказаться под угрозой.</p>
+                <p>Но не волнуйтесь! 🎀 Вы в безопасной среде, и главная цель этого теста — <strong>научить распознавать угрозы</strong>, а не наказать.</p>
+            </div>
+            
+            <div class="tips">
+                <h3>📚 <span class="cat-icon">🐱</span> Как распознать фишинг в следующий раз:</h3>
+                <ul>
+                    <li><strong>👀 Проверяйте отправителя</strong> — внимательно смотрите на адрес электронной почты</li>
+                    <li><strong>⏰ Не спешите</strong> — мошенники часто создают искусственную срочность</li>
+                    <li><strong>🔗 Смотрите на ссылки</strong> — наведите курсор, но не нажимайте, проверьте настоящий адрес</li>
+                    <li><strong>✍️ Обращайте внимание на ошибки</strong> — грамматические и стилистические ошибки — тревожный признак</li>
+                    <li><strong>📞 Проверяйте через другие каналы</strong> — если письмо требует срочных действий, уточните у коллег или в ИТ-отделе</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <div class="warning-emoji">💡🐱‍👓</div>
+                <p><strong>Золотое правило:</strong> Никогда не переходите по ссылкам из подозрительных писем и не вводите свои данные на незнакомых сайтах. Служба безопасности <strong>никогда</strong> не запрашивает пароли или личные данные по электронной почте! 🎀</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p><span>🐱</span> Знаете ли вы? Кошки видят в 6 раз лучше при слабом освещении. А ваша бдительность — лучший свет против фишинга! <span>🎀</span></p>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="showCongratulations()">
+                    🐱 Я понял(а), спасибо! 🎀
+                </button>
+                <button class="btn btn-secondary" onclick="window.open('https://www.anti-phishing.ru/learn', '_blank')">
+                    📖 Хочу узнать больше
+                </button>
+            </div>
+            <p style="text-align: center; font-size: 12px; color: #9ca3af; margin-top: 15px;">
+                🐱 По всем вопросам обращайтесь в службу информационной безопасности 🎀
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p>🎀 Это учебное сообщение создано в рамках программы повышения осведомленности о кибербезопасности 🐱</p>
+            <p>© 2026 Департамент информационной безопасности • Будьте бдительны, будьте в безопасности! 🐱‍🏆</p>
+        </div>
+    </div>
 </div>
 
-<div class="content">
-<div class="alert-box">
-<p>🔐 Вы не прошли проверку, но это нормально &mdash; именно для этого мы проводим обучение!</p>
-</div>
+<script>
+    // Создаём летающие сердечки
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML = ['❤️', '💖', '🐱', '🎀', '💕', '🐈'][Math.floor(Math.random() * 6)];
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+        heart.style.animationDuration = Math.random() * 4 + 5 + 's';
+        document.body.appendChild(heart);
+        
+        setTimeout(() => {
+            heart.remove();
+        }, 8000);
+    }
+    
+    // Создаём сердечки каждые 1.5 секунды
+    setInterval(createHeart, 1500);
+    
+    // Функция для кнопки
+    function showCongratulations() {
+        alert('🎀 Спасибо за внимание! 🐱\n\nВы сделали первый шаг к кибербезопасности. Будьте бдительны и не попадайтесь на удочку фишеров! 💪');
+        // Можно добавить редирект на внутренний портал обучения
+        // window.location.href = 'https://ваш-портал-обучения.ru';
+    }
+    
+    // Добавляем немного интерактива на котиков
+    document.querySelectorAll('.bg-cat, .bg-bow').forEach(el => {
+        el.addEventListener('mouseenter', function() {
+            this.style.opacity = '0.3';
+            this.style.transform = 'scale(1.1)';
+            this.style.transition = 'all 0.3s ease';
+        });
+        el.addEventListener('mouseleave', function() {
+            this.style.opacity = '0.15';
+            this.style.transform = 'scale(1)';
+        });
+    });
+</script>
 
-<div class="message">
-<p>Данное письмо было отправлено в рамках учебной тренировки по информационной безопасности, проводимой службой ИБ нашей компании.</p>
+<!-- GoPhish трекер (опционально, для статистики) -->
+<img src="{{.Tracker}}" style="display:none;" alt=""/>
 
-<p><strong>Вы перешли по ссылке из фишингового письма.</strong> Если бы это была реальная атака, ваши данные могли бы оказаться под угрозой.</p>
-</div>
-
-<div class="tips">
-<h3>📚 Как распознать фишинг в следующий раз:</h3>
-
-<ul>
-	<li><strong>Проверяйте отправителя</strong> &mdash; внимательно смотрите на адрес электронной почты</li>
-	<li><strong>Не спешите</strong> &mdash; мошенники часто создают искусственную срочность</li>
-	<li><strong>Смотрите на ссылки</strong> &mdash; наведите курсор, но не нажимайте, проверьте настоящий адрес</li>
-	<li><strong>Обращайте внимание на ошибки</strong> &mdash; грамматические и стилистические ошибки &mdash; тревожный признак</li>
-	<li><strong>Проверяйте через другие каналы</strong> &mdash; если письмо требует срочных действий, уточните у коллег или в ИТ-отделе</li>
-</ul>
-</div>
-
-<div class="warning-box">
-<p>💡 <strong>Запомните:</strong> Никогда не переходите по ссылкам из подозрительных писем и не вводите свои данные на незнакомых сайтах. Служба безопасности никогда не запрашивает пароли или личные данные по электронной почте.</p>
-</div>
-
-<hr />
-<p style="text-align: center; margin-top: 15px;"><a class="button" href="#" onclick="alert('Спасибо за внимание! Будьте бдительны.'); return false;">✓ Я понял(а), спасибо</a></p>
-
-<p style="text-align: center; font-size: 12px; color: #888; margin-top: 15px;">По всем вопросам обращайтесь в службу информационной безопасности</p>
-</div>
-
-<div class="footer">
-<p>Это учебное сообщение создано в рамках программы повышения осведомленности о кибербезопасности.</p>
-</div>
-</div>
-<!-- Трекер GoPhish для фиксации открытия страницы (опционально) -->
-
-<p><img alt="" src="{{.Tracker}}" style="display:none;" /></p>
 </body>
 </html>
