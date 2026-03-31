@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Учебный фишинг | Кибербезопасность</title>
+	<style type="text/css">* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .warning-icon {
+            font-size: 80px;
+            margin-bottom: 15px;
+            display: inline-block;
+            animation: shake 0.5s ease-in-out;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-15deg); }
+            75% { transform: rotate(15deg); }
+        }
+        
+        h1 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 50px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .content {
+            padding: 40px 35px;
+        }
+        
+        .alert-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        
+        .alert-box p {
+            color: #e65100;
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        .message {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .message p {
+            margin-bottom: 15px;
+        }
+        
+        .tips {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .tips h3 {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tips ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .tips li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            color: #555;
+        }
+        
+        .tips li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .warning-box {
+            background: #fee;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            border: 1px solid #fcc;
+        }
+        
+        .warning-box p {
+            color: #c0392b;
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        .button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .button:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.3);
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 35px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+            font-size: 12px;
+            color: #6c757d;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        hr {
+            margin: 20px 0;
+            border: none;
+            height: 1px;
+            background: #e9ecef;
+        }
+        
+        @media (max-width: 480px) {
+            .content {
+                padding: 25px 20px;
+            }
+            h1 {
+                font-size: 22px;
+            }
+            .warning-icon {
+                font-size: 60px;
+            }
+        }
+	</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<div class="warning-icon">⚠️</div>
+
+<h1>Это был учебный фишинг</h1>
+
+<div class="badge">Тренинг по кибербезопасности</div>
+</div>
+
+<div class="content">
+<div class="alert-box">
+<p>🔐 Вы не прошли проверку, но это нормально &mdash; именно для этого мы проводим обучение!</p>
+</div>
+
+<div class="message">
+<p>Данное письмо было отправлено в рамках учебной тренировки по информационной безопасности, проводимой службой ИБ нашей компании.</p>
+
+<p><strong>Вы перешли по ссылке из фишингового письма.</strong> Если бы это была реальная атака, ваши данные могли бы оказаться под угрозой.</p>
+</div>
+
+<div class="tips">
+<h3>📚 Как распознать фишинг в следующий раз:</h3>
+
+<ul>
+	<li><strong>Проверяйте отправителя</strong> &mdash; внимательно смотрите на адрес электронной почты</li>
+	<li><strong>Не спешите</strong> &mdash; мошенники часто создают искусственную срочность</li>
+	<li><strong>Смотрите на ссылки</strong> &mdash; наведите курсор, но не нажимайте, проверьте настоящий адрес</li>
+	<li><strong>Обращайте внимание на ошибки</strong> &mdash; грамматические и стилистические ошибки &mdash; тревожный признак</li>
+	<li><strong>Проверяйте через другие каналы</strong> &mdash; если письмо требует срочных действий, уточните у коллег или в ИТ-отделе</li>
+</ul>
+</div>
+
+<div class="warning-box">
+<p>💡 <strong>Запомните:</strong> Никогда не переходите по ссылкам из подозрительных писем и не вводите свои данные на незнакомых сайтах. Служба безопасности никогда не запрашивает пароли или личные данные по электронной почте.</p>
+</div>
+
+<hr />
+<p style="text-align: center; margin-top: 15px;"><a class="button" href="#" onclick="alert('Спасибо за внимание! Будьте бдительны.'); return false;">✓ Я понял(а), спасибо</a></p>
+
+<p style="text-align: center; font-size: 12px; color: #888; margin-top: 15px;">По всем вопросам обращайтесь в службу информационной безопасности</p>
+</div>
+
+<div class="footer">
+<p>Это учебное сообщение создано в рамках программы повышения осведомленности о кибербезопасности.</p>
+</div>
+</div>
+<!-- Трекер GoPhish для фиксации открытия страницы (опционально) -->
+
+<p><img alt="" src="{{.Tracker}}" style="display:none;" /></p>
+</body>
+</html>
