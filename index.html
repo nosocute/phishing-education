@@ -20,54 +20,6 @@
             padding: 20px;
         }
 
-        /* Фоновые элементы: котики и бантики */
-        .bg-cat {
-            position: fixed;
-            font-size: 60px;
-            opacity: 0.15;
-            pointer-events: none;
-            z-index: 0;
-            animation: float 20s infinite ease-in-out;
-        }
-
-        .bg-bow {
-            position: fixed;
-            font-size: 40px;
-            opacity: 0.12;
-            pointer-events: none;
-            z-index: 0;
-            animation: float 15s infinite ease-in-out reverse;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-30px) rotate(5deg);
-            }
-        }
-
-        /* Плавающие сердечки */
-        .heart {
-            position: fixed;
-            font-size: 20px;
-            pointer-events: none;
-            animation: floatHeart 8s ease-in-out forwards;
-            z-index: 1;
-        }
-
-        @keyframes floatHeart {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-20vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
         .container {
             max-width: 750px;
             margin: 0 auto;
@@ -108,27 +60,6 @@
             overflow: hidden;
         }
 
-        .header::before {
-            content: '🐱 🎀 🐱 🎀 🐱';
-            position: absolute;
-            bottom: -20px;
-            left: 0;
-            right: 0;
-            font-size: 70px;
-            opacity: 0.2;
-            white-space: nowrap;
-            animation: slide 20s linear infinite;
-        }
-
-        @keyframes slide {
-            from {
-                transform: translateX(-20%);
-            }
-            to {
-                transform: translateX(0%);
-            }
-        }
-
         .warning-icon {
             font-size: 90px;
             display: inline-block;
@@ -150,18 +81,6 @@
             font-size: 38px;
             margin: 20px 0 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.25);
-            backdrop-filter: blur(5px);
-            padding: 8px 20px;
-            border-radius: 50px;
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-            margin-top: 10px;
         }
 
         .content {
@@ -265,27 +184,6 @@
             line-height: 1.5;
         }
 
-        .fun-fact {
-            background: #ecfdf5;
-            border-radius: 20px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-            border: 1px solid #a7f3d0;
-        }
-
-        .fun-fact p {
-            color: #065f46;
-            margin: 0;
-            font-size: 14px;
-        }
-
-        .fun-fact span {
-            font-size: 24px;
-            display: inline-block;
-            margin-right: 10px;
-        }
-
         .button-group {
             display: flex;
             gap: 15px;
@@ -317,24 +215,6 @@
             box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
 
-        .footer {
-            background: #f9fafb;
-            padding: 25px 35px;
-            text-align: center;
-            border-top: 1px solid #e5e7eb;
-            font-size: 13px;
-            color: #6b7280;
-        }
-
-        .footer a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
         @media (max-width: 640px) {
             .content {
                 padding: 25px;
@@ -356,41 +236,26 @@
 </head>
 <body>
 
-<!-- Фоновые котики и бантики -->
-<div class="bg-cat" style="top: 10%; left: 5%;">🐱</div>
-<div class="bg-cat" style="bottom: 15%; right: 3%;">😺</div>
-<div class="bg-cat" style="top: 50%; right: 8%;">🐈</div>
-<div class="bg-cat" style="bottom: 30%; left: 2%;">🐱‍👤</div>
-<div class="bg-bow" style="top: 20%; right: 12%;">🎀</div>
-<div class="bg-bow" style="bottom: 40%; left: 8%;">🎀</div>
-<div class="bg-bow" style="top: 70%; right: 20%;">🎀</div>
-<div class="bg-cat" style="top: 85%; left: 15%;">🐱‍💻</div>
-<div class="bg-cat" style="top: 5%; right: 18%;">🐈‍⬛</div>
-<div class="bg-bow" style="bottom: 10%; right: 25%;">🎀</div>
-
 <div class="container">
     <div class="card">
         <div class="header">
             <div class="warning-icon">⚠️</div>
-            <h1>Это был учебный фишинг!</h1>
-            <div class="badge">
-                Тренинг по кибербезопасности от команды ИБ
-            </div>
+            <h1>Это был учебный фишинг</h1>
         </div>
         
         <div class="content">
             <div class="alert-box">
-                <p><strong>Вы не прошли проверку</strong>, но это абсолютно нормально — именно для этого мы проводим обучение! Каждый из нас учится на своих ошибках.</p>
+                <p><strong>Вы не прошли проверку</strong>, но это абсолютно нормально — именно для этого мы проводим обучение. Каждый из нас учится на своих ошибках.</p>
             </div>
             
             <div class="message">
                 <p>Данное письмо было отправлено в рамках <strong>учебной тренировки по информационной безопасности</strong>, проводимой службой ИБ нашей компании.</p>
                 <p><span class="highlight">Вы перешли по ссылке из фишингового письма</span>. Если бы это была реальная атака, ваши данные могли бы оказаться под угрозой.</p>
-                <p>Но не волнуйтесь! Вы в безопасной среде, и главная цель этого теста — <strong>научить распознавать угрозы</strong>, а не наказать.</p>
+                <p>Вы в безопасной среде, и главная цель этого теста — <strong>научить распознавать угрозы</strong>, а не наказать.</p>
             </div>
             
             <div class="tips">
-                <h3>Как распознать фишинг в следующий раз:</h3>
+                <h3>Как распознать фишинг в следующий раз</h3>
                 <ul>
                     <li><strong>Проверяйте отправителя</strong> — внимательно смотрите на адрес электронной почты</li>
                     <li><strong>Не спешите</strong> — мошенники часто создают искусственную срочность</li>
@@ -401,52 +266,21 @@
             </div>
             
             <div class="warning-box">
-                <p><strong>Золотое правило:</strong> Никогда не переходите по ссылкам из подозрительных писем и не вводите свои данные на незнакомых сайтах. Служба безопасности <strong>никогда</strong> не запрашивает пароли или личные данные по электронной почте!</p>
-            </div>
-            
-            <div class="fun-fact">
-                <p><span>🐱</span> Знаете ли вы? Кошки видят в 6 раз лучше при слабом освещении. А ваша бдительность — лучший свет против фишинга!</p>
+                <p><strong>Золотое правило</strong> Никогда не переходите по ссылкам из подозрительных писем и не вводите свои данные на незнакомых сайтах. Служба безопасности <strong>никогда</strong> не запрашивает пароли или личные данные по электронной почте.</p>
             </div>
             
             <div class="button-group">
                 <button class="btn btn-primary" onclick="showCongratulations()">
-                    Я понял(а), спасибо!
+                    Я понял(а), спасибо
                 </button>
             </div>
-            <p style="text-align: center; font-size: 12px; color: #9ca3af; margin-top: 15px;">
-                По всем вопросам обращайтесь в службу информационной безопасности
-            </p>
-        </div>
-        
-        <div class="footer">
-            <p>Это учебное сообщение создано в рамках программы повышения осведомленности о кибербезопасности</p>
-            <p>© 2026 Департамент информационной безопасности • Будьте бдительны, будьте в безопасности!</p>
         </div>
     </div>
 </div>
 
 <script>
-    // Создаём летающие сердечки
-    function createHeart() {
-        const heart = document.createElement('div');
-        heart.classList.add('heart');
-        heart.innerHTML = ['❤️', '💖', '💕'][Math.floor(Math.random() * 3)];
-        heart.style.left = Math.random() * 100 + '%';
-        heart.style.fontSize = Math.random() * 20 + 15 + 'px';
-        heart.style.animationDuration = Math.random() * 4 + 5 + 's';
-        document.body.appendChild(heart);
-        
-        setTimeout(() => {
-            heart.remove();
-        }, 8000);
-    }
-    
-    // Создаём сердечки каждые 1.5 секунды
-    setInterval(createHeart, 1500);
-    
-    // Функция для кнопки
     function showCongratulations() {
-        alert('Спасибо за внимание!\n\nВы сделали первый шаг к кибербезопасности. Будьте бдительны и не попадайтесь на удочку фишеров!');
+        alert('Спасибо за внимание!\n\nВы сделали первый шаг к кибербезопасности. Будьте бдительны и не попадайтесь на удочку фишеров.');
     }
 </script>
 
