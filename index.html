@@ -20,6 +20,34 @@
             padding: 20px;
         }
 
+        /* Фоновые котики и бантики */
+        .bg-cat {
+            position: fixed;
+            font-size: 60px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .bg-bow {
+            position: fixed;
+            font-size: 40px;
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 0;
+            animation: float 15s infinite ease-in-out reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(5deg);
+            }
+        }
+
         .container {
             max-width: 750px;
             margin: 0 auto;
@@ -184,6 +212,27 @@
             line-height: 1.5;
         }
 
+        .fun-fact {
+            background: #ecfdf5;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid #a7f3d0;
+        }
+
+        .fun-fact p {
+            color: #065f46;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .fun-fact span {
+            font-size: 24px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
         .button-group {
             display: flex;
             gap: 15px;
@@ -236,6 +285,18 @@
 </head>
 <body>
 
+<!-- Фоновые котики и бантики -->
+<div class="bg-cat" style="top: 10%; left: 5%;">🐱</div>
+<div class="bg-cat" style="bottom: 15%; right: 3%;">😺</div>
+<div class="bg-cat" style="top: 50%; right: 8%;">🐈</div>
+<div class="bg-cat" style="bottom: 30%; left: 2%;">🐱‍👤</div>
+<div class="bg-bow" style="top: 20%; right: 12%;">🎀</div>
+<div class="bg-bow" style="bottom: 40%; left: 8%;">🎀</div>
+<div class="bg-bow" style="top: 70%; right: 20%;">🎀</div>
+<div class="bg-cat" style="top: 85%; left: 15%;">🐱‍💻</div>
+<div class="bg-cat" style="top: 5%; right: 18%;">🐈‍⬛</div>
+<div class="bg-bow" style="bottom: 10%; right: 25%;">🎀</div>
+
 <div class="container">
     <div class="card">
         <div class="header">
@@ -267,6 +328,10 @@
             
             <div class="warning-box">
                 <p><strong>Золотое правило</strong> Никогда не переходите по ссылкам из подозрительных писем и не вводите свои данные на незнакомых сайтах. Служба безопасности <strong>никогда</strong> не запрашивает пароли или личные данные по электронной почте.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p><span>🐱</span> Знаете ли вы? Кошки видят в 6 раз лучше при слабом освещении. А ваша бдительность — лучший свет против фишинга!</p>
             </div>
             
             <div class="button-group">
