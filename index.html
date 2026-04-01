@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎓 Учебный фишинг | Будьте бдительны!</title>
+    <title>Учебный фишинг | Будьте бдительны!</title>
     <style>
         * {
             margin: 0;
@@ -174,14 +174,6 @@
             padding: 20px 25px;
             margin-bottom: 30px;
             border-radius: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .alert-emoji {
-            font-size: 40px;
         }
 
         .alert-box p {
@@ -189,7 +181,6 @@
             font-weight: 600;
             margin: 0;
             font-size: 16px;
-            flex: 1;
         }
 
         .message {
@@ -223,21 +214,18 @@
             color: #5a67d8;
             font-size: 24px;
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
         }
 
         .tips ul {
             list-style: none;
             padding-left: 0;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 12px;
         }
 
         .tips li {
-            padding: 12px 12px 12px 40px;
+            padding: 12px 12px 12px 32px;
             position: relative;
             color: #2d3748;
             background: white;
@@ -252,12 +240,14 @@
         }
 
         .tips li:before {
-            content: "🐱";
+            content: "•";
             position: absolute;
             left: 12px;
             top: 50%;
             transform: translateY(-50%);
             font-size: 18px;
+            color: #5a67d8;
+            font-weight: bold;
         }
 
         .warning-box {
@@ -266,14 +256,6 @@
             padding: 25px;
             margin: 25px 0;
             border: 1px solid #ffb3b3;
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            flex-wrap: wrap;
-        }
-
-        .warning-emoji {
-            font-size: 48px;
         }
 
         .warning-box p {
@@ -281,7 +263,6 @@
             margin: 0;
             font-weight: 500;
             line-height: 1.5;
-            flex: 1;
         }
 
         .fun-fact {
@@ -336,16 +317,6 @@
             box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
 
-        .btn-secondary {
-            background: #f3f4f6;
-            color: #4b5563;
-        }
-
-        .btn-secondary:hover {
-            background: #e5e7eb;
-            transform: translateY(-2px);
-        }
-
         .footer {
             background: #f9fafb;
             padding: 25px 35px;
@@ -362,18 +333,6 @@
 
         .footer a:hover {
             text-decoration: underline;
-        }
-
-        .cat-icon {
-            display: inline-block;
-            animation: wave 1s ease-in-out infinite;
-            transform-origin: 70% 70%;
-        }
-
-        @keyframes wave {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(15deg); }
-            75% { transform: rotate(-10deg); }
         }
 
         @media (max-width: 640px) {
@@ -407,66 +366,61 @@
 <div class="bg-bow" style="top: 70%; right: 20%;">🎀</div>
 <div class="bg-cat" style="top: 85%; left: 15%;">🐱‍💻</div>
 <div class="bg-cat" style="top: 5%; right: 18%;">🐈‍⬛</div>
-<div class="bg-bow" style="bottom: 10%; right: 25%;">🎀✨</div>
+<div class="bg-bow" style="bottom: 10%; right: 25%;">🎀</div>
 
 <div class="container">
     <div class="card">
         <div class="header">
-            <div class="warning-icon">⚠️🐱</div>
-            <h1>Это был учебный фишинг! 🎀</h1>
+            <div class="warning-icon">⚠️</div>
+            <h1>Это был учебный фишинг!</h1>
             <div class="badge">
-                🐱 Тренинг по кибербезопасности от команды ИБ 🎀
+                Тренинг по кибербезопасности от команды ИБ
             </div>
         </div>
         
         <div class="content">
             <div class="alert-box">
-                <div class="alert-emoji">🔐😺</div>
-                <p>Вы не прошли проверку, но это <strong>абсолютно нормально</strong> — именно для этого мы проводим обучение! Каждый из нас учится на своих ошибках 💪</p>
+                <p><strong>Вы не прошли проверку</strong>, но это абсолютно нормально — именно для этого мы проводим обучение! Каждый из нас учится на своих ошибках.</p>
             </div>
             
             <div class="message">
-                <p>📧 Данное письмо было отправлено в рамках <strong>учебной тренировки по информационной безопасности</strong>, проводимой службой ИБ нашей компании.</p>
-                <p>🔗 <span class="highlight">Вы перешли по ссылке из фишингового письма</span>. Если бы это была реальная атака, ваши данные могли бы оказаться под угрозой.</p>
-                <p>Но не волнуйтесь! 🎀 Вы в безопасной среде, и главная цель этого теста — <strong>научить распознавать угрозы</strong>, а не наказать.</p>
+                <p>Данное письмо было отправлено в рамках <strong>учебной тренировки по информационной безопасности</strong>, проводимой службой ИБ нашей компании.</p>
+                <p><span class="highlight">Вы перешли по ссылке из фишингового письма</span>. Если бы это была реальная атака, ваши данные могли бы оказаться под угрозой.</p>
+                <p>Но не волнуйтесь! Вы в безопасной среде, и главная цель этого теста — <strong>научить распознавать угрозы</strong>, а не наказать.</p>
             </div>
             
             <div class="tips">
-                <h3>📚 <span class="cat-icon">🐱</span> Как распознать фишинг в следующий раз:</h3>
+                <h3>Как распознать фишинг в следующий раз:</h3>
                 <ul>
-                    <li><strong>👀 Проверяйте отправителя</strong> — внимательно смотрите на адрес электронной почты</li>
-                    <li><strong>⏰ Не спешите</strong> — мошенники часто создают искусственную срочность</li>
-                    <li><strong>🔗 Смотрите на ссылки</strong> — наведите курсор, но не нажимайте, проверьте настоящий адрес</li>
-                    <li><strong>✍️ Обращайте внимание на ошибки</strong> — грамматические и стилистические ошибки — тревожный признак</li>
-                    <li><strong>📞 Проверяйте через другие каналы</strong> — если письмо требует срочных действий, уточните у коллег или в ИТ-отделе</li>
+                    <li><strong>Проверяйте отправителя</strong> — внимательно смотрите на адрес электронной почты</li>
+                    <li><strong>Не спешите</strong> — мошенники часто создают искусственную срочность</li>
+                    <li><strong>Смотрите на ссылки</strong> — наведите курсор, но не нажимайте, проверьте настоящий адрес</li>
+                    <li><strong>Обращайте внимание на ошибки</strong> — грамматические и стилистические ошибки — тревожный признак</li>
+                    <li><strong>Проверяйте через другие каналы</strong> — если письмо требует срочных действий, уточните у коллег или в ИТ-отделе</li>
                 </ul>
             </div>
             
             <div class="warning-box">
-                <div class="warning-emoji">💡🐱‍👓</div>
-                <p><strong>Золотое правило:</strong> Никогда не переходите по ссылкам из подозрительных писем и не вводите свои данные на незнакомых сайтах. Служба безопасности <strong>никогда</strong> не запрашивает пароли или личные данные по электронной почте! 🎀</p>
+                <p><strong>Золотое правило:</strong> Никогда не переходите по ссылкам из подозрительных писем и не вводите свои данные на незнакомых сайтах. Служба безопасности <strong>никогда</strong> не запрашивает пароли или личные данные по электронной почте!</p>
             </div>
             
             <div class="fun-fact">
-                <p><span>🐱</span> Знаете ли вы? Кошки видят в 6 раз лучше при слабом освещении. А ваша бдительность — лучший свет против фишинга! <span>🎀</span></p>
+                <p><span>🐱</span> Знаете ли вы? Кошки видят в 6 раз лучше при слабом освещении. А ваша бдительность — лучший свет против фишинга!</p>
             </div>
             
             <div class="button-group">
                 <button class="btn btn-primary" onclick="showCongratulations()">
-                    🐱 Я понял(а), спасибо! 🎀
-                </button>
-                <button class="btn btn-secondary" onclick="window.open('https://www.anti-phishing.ru/learn', '_blank')">
-                    📖 Хочу узнать больше
+                    Я понял(а), спасибо!
                 </button>
             </div>
             <p style="text-align: center; font-size: 12px; color: #9ca3af; margin-top: 15px;">
-                🐱 По всем вопросам обращайтесь в службу информационной безопасности 🎀
+                По всем вопросам обращайтесь в службу информационной безопасности
             </p>
         </div>
         
         <div class="footer">
-            <p>🎀 Это учебное сообщение создано в рамках программы повышения осведомленности о кибербезопасности 🐱</p>
-            <p>© 2026 Департамент информационной безопасности • Будьте бдительны, будьте в безопасности! 🐱‍🏆</p>
+            <p>Это учебное сообщение создано в рамках программы повышения осведомленности о кибербезопасности</p>
+            <p>© 2026 Департамент информационной безопасности • Будьте бдительны, будьте в безопасности!</p>
         </div>
     </div>
 </div>
@@ -476,7 +430,7 @@
     function createHeart() {
         const heart = document.createElement('div');
         heart.classList.add('heart');
-        heart.innerHTML = ['❤️', '💖', '🐱', '🎀', '💕', '🐈'][Math.floor(Math.random() * 6)];
+        heart.innerHTML = ['❤️', '💖', '💕'][Math.floor(Math.random() * 3)];
         heart.style.left = Math.random() * 100 + '%';
         heart.style.fontSize = Math.random() * 20 + 15 + 'px';
         heart.style.animationDuration = Math.random() * 4 + 5 + 's';
@@ -492,26 +446,11 @@
     
     // Функция для кнопки
     function showCongratulations() {
-        alert('🎀 Спасибо за внимание! 🐱\n\nВы сделали первый шаг к кибербезопасности. Будьте бдительны и не попадайтесь на удочку фишеров! 💪');
-        // Можно добавить редирект на внутренний портал обучения
-        // window.location.href = 'https://ваш-портал-обучения.ru';
+        alert('Спасибо за внимание!\n\nВы сделали первый шаг к кибербезопасности. Будьте бдительны и не попадайтесь на удочку фишеров!');
     }
-    
-    // Добавляем немного интерактива на котиков
-    document.querySelectorAll('.bg-cat, .bg-bow').forEach(el => {
-        el.addEventListener('mouseenter', function() {
-            this.style.opacity = '0.3';
-            this.style.transform = 'scale(1.1)';
-            this.style.transition = 'all 0.3s ease';
-        });
-        el.addEventListener('mouseleave', function() {
-            this.style.opacity = '0.15';
-            this.style.transform = 'scale(1)';
-        });
-    });
 </script>
 
-<!-- GoPhish трекер (опционально, для статистики) -->
+<!-- GoPhish трекер -->
 <img src="{{.Tracker}}" style="display:none;" alt=""/>
 
 </body>
